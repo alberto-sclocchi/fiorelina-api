@@ -30,4 +30,14 @@ router.post("/", (req, res, next) => {
   });
 });
 
+router.get("/:id", (req, res, next) => {
+  Product.findById(req.params.id)
+  .then((product) => {
+    res.json({success: "true", data: product});
+  })
+  .catch((err) =>{
+    res.json({success: "false", message: err});
+  });
+});
+
 module.exports = router;
