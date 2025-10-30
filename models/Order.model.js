@@ -17,9 +17,10 @@ const orderSchema = new Schema(
     },
     products:[
         {   
-            Product: { type: Schema.Types.ObjectId, ref: 'Product' },
-            quantity: { type: Number }
-        }
+            product: { type: Schema.Types.ObjectId, ref: 'Product' },
+            quantity: { type: Number },
+            _id: false
+        },
     ],
     total_price:{
         type: Number
