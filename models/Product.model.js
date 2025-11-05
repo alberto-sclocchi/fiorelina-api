@@ -11,6 +11,10 @@ const productSchema = new Schema(
     },
     ingredients:{
         type: [String]
+    },
+    imageUrl:{
+        type: String,
+        default: "https://www.giverecipe.com/wp-content/uploads/2020/06/Chocolate-Strawberry-Cake-Recipe.jpg"
     }
   },
   {

@@ -15,7 +15,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   Order.create(req.body)
   .then((order) => {
     res.json({success: "true", data: order});
@@ -34,6 +34,7 @@ router.post('/create-checkout-session', async (req, res) => {
         currency: 'usd',
         product_data:{
           name: product.name,
+          images: [product.imageUrl],
         },
         unit_amount: Math.round(product.price * 100),
       },      
